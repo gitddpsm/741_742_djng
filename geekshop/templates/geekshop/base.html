@@ -20,15 +20,7 @@
 				<a href="#" class="search"></a>
 			</div>
 			<div class="text-slider">
-				<h3 class="green">тенденции</h3>
-				{{user}}
-				{% if user.is_anonymouse %} 
-			    <p>{{ GUEST }}</p>
-				{% endif %}
-			    {% comment %} <p>{{ item }}</p> {% endcomment %}
-				{% comment %} {% for item in items_list %} {% endcomment %}
-				{# {% for item in items_list %} #}
-				{% comment %} {% endfor %} {% endcomment %}
+				<h3 class="green">тенденции {% now "Y" %} </h3>
 				<h3 class="big"> удобные стулья</h3>
 				<p>Новый уровень комфорта. Отличные характеристики.</p>
 				<a href="#" class="button-order">заказать <img src="{% static 'geekshop/img/arrow.png' %}" alt=""></a>
