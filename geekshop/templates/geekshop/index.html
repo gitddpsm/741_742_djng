@@ -9,8 +9,8 @@
         <h3 class="green">тенденции {% now "Y" %}</h3>
         <h3 class="big"> удобные стулья</h3>
         <h4>{{ slogan|title }} </h4>
-		{{ header|title }}
-		{{ header }}
+		{% comment %} {{ header|title }}
+		{{ header }} {% endcomment %}
         <p>Новый уровень комфорта. Отличные характеристики.</p>
         <a href="#" class="button-order">заказать <img src="{% static 'geekshop/img/arrow.png' %}" alt=""></a>
     </div>
