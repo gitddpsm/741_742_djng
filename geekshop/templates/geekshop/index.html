@@ -8,7 +8,9 @@
     <div class="text-slider">
         <h3 class="green">тенденции {% now "Y" %}</h3>
         <h3 class="big"> удобные стулья</h3>
-        <h4>{{ slogan|title }} {{ headers }}</h4>
+        <h4>{{ slogan|title }} </h4>
+		{{ header|title }}
+		{{ header }}
         <p>Новый уровень комфорта. Отличные характеристики.</p>
         <a href="#" class="button-order">заказать <img src="{% static 'geekshop/img/arrow.png' %}" alt=""></a>
     </div>
@@ -35,9 +37,9 @@
             </a>
         </div>
         <div class="block">
-            <a href="#"><img src="img/product-2.jpg" alt="">
+            <a href="#"><img src="{% static 'img/product-2.jpg'%}" alt="">
                 <div class="text">
-                    <img src="img/icon-hover.png" alt="">
+                    <img src="{% static 'img/icon-hover.png'%}" alt="">
                     <h4>Стул повышенного качества</h4>
                     <p>Не оторваться. </p>
                 </div>
