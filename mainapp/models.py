@@ -7,6 +7,7 @@ class ProductCategory(models.Model):
         max_length=64,
         unique=True,
     )
+
     description = models.TextField(
         verbose_name='описание',
         blank=True,
@@ -27,19 +28,19 @@ class Product(models.Model):
     category = models.ForeignKey(
         ProductCategory,
         on_delete=models.CASCADE,
-        verbose_name=('категория'),
+        verbose_name='категория',
     )
     name = models.CharField(
-        verbose_name='наименование',
+        verbose_name='название продукта',
         max_length=128,
     )
     short_desc = models.CharField(
         max_length=256,
         blank=True,
-        verbose_name='описание',
+        verbose_name='краткое описание',
     )
     image = models.ImageField(
-        upload_to='product_images',
+        upload_to='products_images',
         blank=True,
     )
     description = models.TextField(
