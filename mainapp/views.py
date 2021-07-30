@@ -4,7 +4,11 @@ from mainapp.models import Product
 
 
 def index(request):
+<<<<<<< HEAD
     title = 'кателог'
+=======
+    title = 'каталог'
+>>>>>>> 1949e04c3255be960f0905b08038d68a461762f4
 
     links_menu = [
         {'href': 'index', 'name': 'все'},
