@@ -39,6 +39,5 @@ ECHO        run
 ECHO G:\DJango\GBproject\env\Scripts\deactivate.bat 
 cd G:\DJango\GBproject\geekshop
 python manage.py runserver
-pause
 G:\DJango\GBproject\env\Scripts\deactivate.bat
 pause
