@@ -4,7 +4,7 @@ from mainapp.models import Product
 
 
 def index(request):
-    title = 'кателог'
+    title = 'каталог'
 
     links_menu = [
         {'href': 'index', 'name': 'все'},
