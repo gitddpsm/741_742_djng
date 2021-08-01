@@ -1,18 +1,5 @@
 [
     {
-        "model": "admin.logentry",
-        "pk": 1,
-        "fields": {
-            "action_time": "2021-08-01T18:11:43.363",
-            "user": 1,
-            "content_type": 7,
-            "object_id": "4",
-            "object_repr": "Диван Раздвижной - 4",
-            "action_flag": 2,
-            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
-        }
-    },
-    {
         "model": "auth.permission",
         "pk": 1,
         "fields": {
@@ -301,14 +288,6 @@
         }
     },
     {
-        "model": "sessions.session",
-        "pk": "q5jp8yxknby5ypsb3rj0frdvrm1n3vsa",
-        "fields": {
-            "session_data": ".eJxVjEEOwiAQRe_C2hCIMIBL956BzDAgVQNJaVfGu9smXej2v_f-W0RclxrXkec4sbgILU6_G2F65rYDfmC7d5l6W-aJ5K7Igw5565xf18P9O6g46lYHyOhd8MaRckDBgLNJKVMoF406AQTD7JNlZzeH0Gr0IQOcEzIVEJ8v1tU4IA:1mAD1u:n5k02Lc4UxXNrzbGNIKmXrkAenlQKyPpsvkbiT5ykPs",
-            "expire_date": "2021-08-15T18:05:30.100"
-        }
-    },
-    {
         "model": "mainapp.productcategory",
         "pk": 1,
         "fields": {
@@ -378,24 +357,11 @@
         }
     },
     {
-        "model": "mainapp.product",
-        "pk": 4,
-        "fields": {
-            "category": 2,
-            "name": "Диван Раздвижной",
-            "short_desc": "",
-            "image": "products_images/divan_razdv_1_KQUHVJT.PNG",
-            "description": "",
-            "price": "0.00",
-            "quantity": 0
-        }
-    },
-    {
         "model": "authapp.shopuser",
         "pk": 1,
         "fields": {
             "password": "pbkdf2_sha256$260000$ccwxP0xW8PKQefNrk1fD5K$xkO2zTc+7QFKrMZ6lq5cTlRjQAVEQJ+8GFZiPqnkRZ0=",
-            "last_login": "2021-08-01T18:05:30.034",
+            "last_login": "2021-08-01T13:17:00.794",
             "is_superuser": true,
             "username": "root",
             "first_name": "",
@@ -406,26 +372,6 @@
             "date_joined": "2021-08-01T12:51:26.752",
             "avatar": "",
             "age": 30,
-            "groups": [],
-            "user_permissions": []
-        }
-    },
-    {
-        "model": "authapp.shopuser",
-        "pk": 2,
-        "fields": {
-            "password": "pbkdf2_sha256$260000$bXNounOZU5PMgXySDmbKWV$5Hd1GRv5WwyTv9gjLO3mSAeXDaaB8d2DL/YU2dB0kMA=",
-            "last_login": "2021-08-01T14:22:46.480",
-            "is_superuser": false,
-            "username": "ddclash",
-            "first_name": "Сергей",
-            "last_name": "",
-            "email": "gddclash@gmail.com",
-            "is_staff": false,
-            "is_active": true,
-            "date_joined": "2021-08-01T14:22:26.578",
-            "avatar": "",
-            "age": 38,
             "groups": [],
             "user_permissions": []
         }

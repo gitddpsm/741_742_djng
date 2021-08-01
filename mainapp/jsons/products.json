@@ -25,5 +25,14 @@
     "description": "",
     "price": "12000.00",
     "quantity": 4
+  },
+  {
+    "category": "Диваны",
+    "name": "Диван Раздвижной",
+    "short_desc": "Спеши попробовать",
+    "image": "products_images/divan_razdv_1_KQUHVJT.PNG",
+    "description": "На таком раздвигают все",
+    "price": "150000.00",
+    "quantity": 0
   }
 ]
