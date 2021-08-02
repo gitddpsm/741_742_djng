@@ -53,7 +53,8 @@ def edit(request):
     title = 'профиль'
 
     if request.method == 'POST':
-        edit_form = ShopUserEditForm(request.POST, request.FILES, instance=request.user)
+        edit_form = ShopUserEditForm(
+            request.POST, request.FILES, instance=request.user)
         if edit_form.is_valid():
             edit_form.save()
 
