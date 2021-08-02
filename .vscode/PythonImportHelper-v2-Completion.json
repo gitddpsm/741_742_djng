@@ -908,7 +908,7 @@
         "kind": 5,
         "importPath": "mainapp.urls",
         "description": "mainapp.urls",
-        "peekOfCode": "app_name = 'mainapp'\nurlpatterns = [\n    path('', products, name='index'),\n]",
+        "peekOfCode": "app_name = 'mainapp'\nurlpatterns = [\n    path('', products, name='index'),\n    path('category/<int:pk>/', products, name='category'),\n]",
         "detail": "mainapp.urls",
         "documentation": {}
     },
@@ -917,7 +917,7 @@
         "kind": 5,
         "importPath": "mainapp.urls",
         "description": "mainapp.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', products, name='index'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', products, name='index'),\n    path('category/<int:pk>/', products, name='category'),\n]",
         "detail": "mainapp.urls",
         "documentation": {}
     },
@@ -926,7 +926,7 @@
         "kind": 2,
         "importPath": "mainapp.views",
         "description": "mainapp.views",
-        "peekOfCode": "def products(request, pk=None):\n    title = 'каталог'\n    links_menu = ProductCategory.objects.all()\n    if pk is not None:\n        if pk == 0:\n            products = Product.objects.all().order_by('price')\n            category = {'name': 'все'}\n        else:\n            category = get_object_or_404(ProductCategory, pk=pk)\n            products = Product.objects.filter(",
+        "peekOfCode": "def products(request, pk=None):\n    title = 'каталог'\n    links_menu = ProductCategory.objects.all()\n    same_products = Product.objects.all()[:4]\n    if pk is not None:\n        if pk == 0:\n            products = Product.objects.all().order_by('price')\n            category = {'name': 'все'}\n        else:\n            category = get_object_or_404(ProductCategory, pk=pk)",
         "detail": "mainapp.views",
         "documentation": {}
     },

@@ -1,12 +1,9 @@
 {% extends 'geekshop/base.html' %}
 {% load static %}
 
-{% block content %}
-
-{% include 'geekshop/includes/inc_main_menu.html' %}
+{% block content %}{% include 'geekshop/includes/inc_main_menu.html' %}
 <div class="details">
     {% include 'mainapp/includes/inc_category_menu.html' %}
-
     <div class="details-products">
         <div class="details-slider">
             <div class="slider-product">
@@ -48,7 +45,28 @@
             </div>
         </div>
     </div>
-
+    <div class="products_list" style="margin-top: 50px;"> 
+    {% if category %}    
+        <div class= "title clearfix">   
+            <h2>
+            Kатегория: "{{ category.name|title }}"
+            </h2>  
+        </div>
+    {% endif %}
+        <div class="related-products" style="display: flex; justify-content: center; margin-top: 20px;">
+        {% for product in products %}
+        <div class="block">
+            <a href="#"><img src="/media/{{product.image}}" alt="img">
+                <div class="text">
+                    <img src="{% static '/geekshop/img/icon-hover.png'%}" alt="img">
+                    <h4>{{product.name}}</h4>      
+                    <p>{{product.short_desc}}</p>
+                    <p>{{ product.category.name}}</p>
+                </div>
+            </a>
+        {% endfor %}
+       </div>
+    
     <div class="related">
         <div class="title clearfix">
             <h2>Похожие продукты</h2>

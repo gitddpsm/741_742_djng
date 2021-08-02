@@ -7,6 +7,7 @@ def products(request, pk=None):
     title = 'каталог'
 
     links_menu = ProductCategory.objects.all()
+    same_products = Product.objects.all()[:4]
 
     if pk is not None:
         if pk == 0:
@@ -21,15 +22,18 @@ def products(request, pk=None):
             'title': title,
             'links_menu': links_menu,
             'category': category,
+            'related_products': same_products,
             'products': products
         }
         return render(request, 'mainapp/products.html', context)
 
-    same_products = Product.objects.all()[:4]
+    products = Product.objects.all().order_by('price')
 
     context = {
         'title': title,
         'links_menu': links_menu,
         'related_products': same_products,
+        'products': products
+
     }
     return render(request, 'mainapp/products.html', context)
