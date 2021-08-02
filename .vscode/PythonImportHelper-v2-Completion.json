@@ -484,7 +484,7 @@
         "documentation": {}
     },
     {
-        "label": "ProductCategory",
+        "label": "Product",
         "importPath": "mainapp.models",
         "description": "mainapp.models",
         "isExtraImport": true,
@@ -492,7 +492,7 @@
         "documentation": {}
     },
     {
-        "label": "Product",
+        "label": "ProductCategory",
         "importPath": "mainapp.models",
         "description": "mainapp.models",
         "isExtraImport": true,
@@ -525,15 +525,6 @@
         "documentation": {}
     },
     {
-        "label": "_locale",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "_locale",
-        "description": "_locale",
-        "detail": "_locale",
-        "documentation": {}
-    },
-    {
         "label": "static",
         "importPath": "django.conf.urls.static",
         "description": "django.conf.urls.static",
@@ -563,22 +554,6 @@
         "description": "django.core.wsgi",
         "isExtraImport": true,
         "detail": "django.core.wsgi",
-        "documentation": {}
-    },
-    {
-        "label": "StringIO",
-        "importPath": "io",
-        "description": "io",
-        "isExtraImport": true,
-        "detail": "io",
-        "documentation": {}
-    },
-    {
-        "label": "Command",
-        "importPath": "django.core.management.commands.dumpdata",
-        "description": "django.core.management.commands.dumpdata",
-        "isExtraImport": true,
-        "detail": "django.core.management.commands.dumpdata",
         "documentation": {}
     },
     {
@@ -720,7 +695,7 @@
         "kind": 6,
         "importPath": "basketapp.migrations.0001_initial",
         "description": "basketapp.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('mainapp', '0001_initial'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Basket',\n            fields=[",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n        ('mainapp', '0001_initial'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Basket',\n            fields=[",
         "detail": "basketapp.migrations.0001_initial",
         "documentation": {}
     },
@@ -837,7 +812,7 @@
         "kind": 5,
         "importPath": "geekshop.settings",
         "description": "geekshop.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'mainapp',\n    'authapp'\n    'basketapp',",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'mainapp',\n    'authapp',\n    'basketapp',",
         "detail": "geekshop.settings",
         "documentation": {}
     },
@@ -901,15 +876,6 @@
         "importPath": "geekshop.settings",
         "description": "geekshop.settings",
         "peekOfCode": "AUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },",
-        "detail": "geekshop.settings",
-        "documentation": {}
-    },
-    {
-        "label": "_locale._getdefaultlocale",
-        "kind": 5,
-        "importPath": "geekshop.settings",
-        "description": "geekshop.settings",
-        "peekOfCode": "_locale._getdefaultlocale = (lambda *args: ['en_US', 'utf8'])\nLANGUAGE_CODE = 'ru-RU'\nTIME_ZONE = 'Europe/Moscow'\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = False\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = (",
         "detail": "geekshop.settings",
         "documentation": {}
     },
@@ -1008,7 +974,7 @@
         "kind": 5,
         "importPath": "geekshop.urls",
         "description": "geekshop.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('products/', include('mainapp.urls',\n         namespace='products'), name='products'),\n    path('auth/', include('authapp.urls', namespace='auth'), name='auth'),\n    path('basket/', include('basketapp.urls', namespace='basket'), name='basket'),\n    path('', index, name='index'),\n    path('contacts/', contacts, name='contacts')\n]\nif settings.DEBUG:",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('products/', include('mainapp.urls', namespace='products'), name='products'),\n    path('auth/', include('authapp.urls', namespace='auth'), name='auth'),\n    path('basket/', include('basketapp.urls', namespace='basket'), name='basket'),\n    path('', index, name='index'),\n    path('contacts/', contacts, name='contacts')\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "geekshop.urls",
         "documentation": {}
     },
@@ -1037,15 +1003,6 @@
         "description": "geekshop.wsgi",
         "peekOfCode": "application = get_wsgi_application()",
         "detail": "geekshop.wsgi",
-        "documentation": {}
-    },
-    {
-        "label": "Command",
-        "kind": 6,
-        "importPath": "mainapp.management.commands.cyr_dumpdata",
-        "description": "mainapp.management.commands.cyr_dumpdata",
-        "peekOfCode": "class Command(Dumpdata):\n    def add_arguments(self, parser):\n        super(Command, self).add_arguments(parser)\n        parser.add_argument(\n            '--pretty', default=False, action='store_true',\n            dest='pretty', help='Avoid unicode escape symbols'\n        )\n    def handle(self, *args, **kwargs):\n        captcha_stdout = StringIO()\n        old_stdout = self.stdout",
-        "detail": "mainapp.management.commands.cyr_dumpdata",
         "documentation": {}
     },
     {
@@ -1134,7 +1091,7 @@
         "kind": 2,
         "importPath": "mainapp.views",
         "description": "mainapp.views",
-        "peekOfCode": "def products(request, pk=None):\n    title = 'каталог'\n    links_menu = ProductCategory.objects.all()\n    same_products = Product.objects.all()[:4]\n    basket = []\n    if request.user.is_authenticated:\n        basket = Basket.objects.filter(user=request.user)\n    if pk is not None:\n        if pk == 0:\n            products = Product.objects.all().order_by('price')",
+        "peekOfCode": "def products(request, pk=None):\n    title = 'продукты'\n    links_menu = ProductCategory.objects.all()\n    same_products = Product.objects.all()[:4]\n    basket = []\n    if request.user.is_authenticated:\n        basket = Basket.objects.filter(user=request.user)\n    if pk is not None:\n        if pk == 0:\n            products = Product.objects.all().order_by('price')",
         "detail": "mainapp.views",
         "documentation": {}
     },

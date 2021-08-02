@@ -3,7 +3,6 @@ from django.shortcuts import render, get_object_or_404
 
 from basketapp.models import Basket
 from mainapp.models import Product
-# DD views here.
 
 
 def basket(request):

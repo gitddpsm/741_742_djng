@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 
-from mainapp.models import ProductCategory, Product
 from basketapp.models import Basket
+from mainapp.models import Product, ProductCategory
 
 
 def products(request, pk=None):
-    title = 'каталог'
+    title = 'продукты'
 
     links_menu = ProductCategory.objects.all()
     same_products = Product.objects.all()[:4]
@@ -20,8 +20,7 @@ def products(request, pk=None):
             category = {'name': 'все'}
         else:
             category = get_object_or_404(ProductCategory, pk=pk)
-            products = Product.objects.filter(
-                category__pk=pk).order_by('price')
+            products = Product.objects.filter(category__pk=pk).order_by('price')
 
         context = {
             'title': title,

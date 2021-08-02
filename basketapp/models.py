@@ -2,7 +2,6 @@ from django.conf import settings
 from django.db import models
 
 from mainapp.models import Product
-# DD basketapp models.py
 
 
 class Basket(models.Model):
@@ -15,7 +14,6 @@ class Basket(models.Model):
         Product,
         on_delete=models.CASCADE,
     )
-
     quantity = models.PositiveIntegerField(
         verbose_name='количество',
         default=0,
@@ -25,3 +23,4 @@ class Basket(models.Model):
         verbose_name='время',
         auto_now_add=True,
     )
+
