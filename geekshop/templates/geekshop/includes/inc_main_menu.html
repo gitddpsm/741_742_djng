@@ -9,6 +9,13 @@
             <a href="{% url 'auth:edit' %}">
                 {{ user.first_name|default:'Пользователь' }}
             </a>
+            <a href="{% url 'basket:view' %}" class="basket">
+                <span>
+                    {% if basket %}
+                        {{ baskel|length }}
+                    {% endif %}
+                </span>
+            </a>                        
         </li>
         {% endif %}
         <li>

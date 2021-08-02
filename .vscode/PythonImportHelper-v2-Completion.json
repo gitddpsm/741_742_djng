@@ -74,6 +74,30 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "django.utils.timezone",
         "kind": 6,
         "isExtraImport": true,
@@ -115,6 +139,14 @@
         "documentation": {}
     },
     {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
         "label": "ShopUser",
         "importPath": "authapp.models",
         "description": "authapp.models",
@@ -128,6 +160,14 @@
         "description": "authapp.models",
         "isExtraImport": true,
         "detail": "authapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
         "documentation": {}
     },
     {
@@ -195,6 +235,14 @@
         "documentation": {}
     },
     {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -204,6 +252,14 @@
     },
     {
         "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -243,7 +299,31 @@
         "documentation": {}
     },
     {
+        "label": "HttpResponseRedirect",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
         "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -299,6 +379,127 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "Basket",
+        "importPath": "basketapp.models",
+        "description": "basketapp.models",
+        "isExtraImport": true,
+        "detail": "basketapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "Basket",
+        "importPath": "basketapp.models",
+        "description": "basketapp.models",
+        "isExtraImport": true,
+        "detail": "basketapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "Basket",
+        "importPath": "basketapp.models",
+        "description": "basketapp.models",
+        "isExtraImport": true,
+        "detail": "basketapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "mainapp.models",
+        "description": "mainapp.models",
+        "isExtraImport": true,
+        "detail": "mainapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "mainapp.models",
+        "description": "mainapp.models",
+        "isExtraImport": true,
+        "detail": "mainapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "ProductCategory",
+        "importPath": "mainapp.models",
+        "description": "mainapp.models",
+        "isExtraImport": true,
+        "detail": "mainapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "mainapp.models",
+        "description": "mainapp.models",
+        "isExtraImport": true,
+        "detail": "mainapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "ProductCategory",
+        "importPath": "mainapp.models",
+        "description": "mainapp.models",
+        "isExtraImport": true,
+        "detail": "mainapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "mainapp.models",
+        "description": "mainapp.models",
+        "isExtraImport": true,
+        "detail": "mainapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "ProductCategory",
+        "importPath": "mainapp.models",
+        "description": "mainapp.models",
+        "isExtraImport": true,
+        "detail": "mainapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "mainapp.models",
+        "description": "mainapp.models",
+        "isExtraImport": true,
+        "detail": "mainapp.models",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -330,14 +531,6 @@
         "importPath": "_locale",
         "description": "_locale",
         "detail": "_locale",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -403,63 +596,6 @@
         "importPath": "json",
         "description": "json",
         "detail": "json",
-        "documentation": {}
-    },
-    {
-        "label": "ProductCategory",
-        "importPath": "mainapp.models",
-        "description": "mainapp.models",
-        "isExtraImport": true,
-        "detail": "mainapp.models",
-        "documentation": {}
-    },
-    {
-        "label": "Product",
-        "importPath": "mainapp.models",
-        "description": "mainapp.models",
-        "isExtraImport": true,
-        "detail": "mainapp.models",
-        "documentation": {}
-    },
-    {
-        "label": "ProductCategory",
-        "importPath": "mainapp.models",
-        "description": "mainapp.models",
-        "isExtraImport": true,
-        "detail": "mainapp.models",
-        "documentation": {}
-    },
-    {
-        "label": "Product",
-        "importPath": "mainapp.models",
-        "description": "mainapp.models",
-        "isExtraImport": true,
-        "detail": "mainapp.models",
-        "documentation": {}
-    },
-    {
-        "label": "ProductCategory",
-        "importPath": "mainapp.models",
-        "description": "mainapp.models",
-        "isExtraImport": true,
-        "detail": "mainapp.models",
-        "documentation": {}
-    },
-    {
-        "label": "Product",
-        "importPath": "mainapp.models",
-        "description": "mainapp.models",
-        "isExtraImport": true,
-        "detail": "mainapp.models",
-        "documentation": {}
-    },
-    {
-        "label": "django.db.models.deletion",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.db.models.deletion",
-        "description": "django.db.models.deletion",
-        "detail": "django.db.models.deletion",
         "documentation": {}
     },
     {
@@ -580,6 +716,78 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "basketapp.migrations.0001_initial",
+        "description": "basketapp.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('mainapp', '0001_initial'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Basket',\n            fields=[",
+        "detail": "basketapp.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "BasketappConfig",
+        "kind": 6,
+        "importPath": "basketapp.apps",
+        "description": "basketapp.apps",
+        "peekOfCode": "class BasketappConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'basketapp'",
+        "detail": "basketapp.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Basket",
+        "kind": 6,
+        "importPath": "basketapp.models",
+        "description": "basketapp.models",
+        "peekOfCode": "class Basket(models.Model):\n    user = models.ForeignKey(\n        settings.AUTH_USER_MODEL,\n        on_delete=models.CASCADE,\n        related_name='basket',\n    )\n    product = models.ForeignKey(\n        Product,\n        on_delete=models.CASCADE,\n    )",
+        "detail": "basketapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "app_name",
+        "kind": 5,
+        "importPath": "basketapp.urls",
+        "description": "basketapp.urls",
+        "peekOfCode": "app_name = 'basketapp'\nurlpatterns = [\n    path('', basket, name='view'),\n    path('add/<int:pk>/', basket_add, name='add'),\n    path('remove/<int:pk>)/', basket_remove, name='remove'),\n]",
+        "detail": "basketapp.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "basketapp.urls",
+        "description": "basketapp.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', basket, name='view'),\n    path('add/<int:pk>/', basket_add, name='add'),\n    path('remove/<int:pk>)/', basket_remove, name='remove'),\n]",
+        "detail": "basketapp.urls",
+        "documentation": {}
+    },
+    {
+        "label": "basket",
+        "kind": 2,
+        "importPath": "basketapp.views",
+        "description": "basketapp.views",
+        "peekOfCode": "def basket(request):\n    context = {}\n    return render(request, 'basketapp/basket.html', context)\ndef basket_add(request, pk):\n    product = get_object_or_404(Product, pk=pk)\n    basket = Basket.objects.filter(user=request.user, product=product).first()\n    if not basket:\n        basket = Basket(user=request.user, product=product)\n    basket.quantity += 1\n    basket.save()",
+        "detail": "basketapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "basket_add",
+        "kind": 2,
+        "importPath": "basketapp.views",
+        "description": "basketapp.views",
+        "peekOfCode": "def basket_add(request, pk):\n    product = get_object_or_404(Product, pk=pk)\n    basket = Basket.objects.filter(user=request.user, product=product).first()\n    if not basket:\n        basket = Basket(user=request.user, product=product)\n    basket.quantity += 1\n    basket.save()\n    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))\ndef basket_remove(request, pk):\n    context = {}",
+        "detail": "basketapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "basket_remove",
+        "kind": 2,
+        "importPath": "basketapp.views",
+        "description": "basketapp.views",
+        "peekOfCode": "def basket_remove(request, pk):\n    context = {}\n    return render(request, 'basketapp/basket.html', context)",
+        "detail": "basketapp.views",
+        "documentation": {}
+    },
+    {
         "label": "application",
         "kind": 5,
         "importPath": "geekshop.asgi",
@@ -629,7 +837,7 @@
         "kind": 5,
         "importPath": "geekshop.settings",
         "description": "geekshop.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'mainapp',\n    'authapp'\n]",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'mainapp',\n    'authapp'\n    'basketapp',",
         "detail": "geekshop.settings",
         "documentation": {}
     },
@@ -800,7 +1008,7 @@
         "kind": 5,
         "importPath": "geekshop.urls",
         "description": "geekshop.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('products/', include('mainapp.urls', namespace='products'), name='products'),\n    path('auth/', include('authapp.urls', namespace='auth'), name='auth'),\n    path('', index, name='index'),\n    path('contacts/', contacts, name='contacts')\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('products/', include('mainapp.urls',\n         namespace='products'), name='products'),\n    path('auth/', include('authapp.urls', namespace='auth'), name='auth'),\n    path('basket/', include('basketapp.urls', namespace='basket'), name='basket'),\n    path('', index, name='index'),\n    path('contacts/', contacts, name='contacts')\n]\nif settings.DEBUG:",
         "detail": "geekshop.urls",
         "documentation": {}
     },
@@ -926,7 +1134,7 @@
         "kind": 2,
         "importPath": "mainapp.views",
         "description": "mainapp.views",
-        "peekOfCode": "def products(request, pk=None):\n    title = 'каталог'\n    links_menu = ProductCategory.objects.all()\n    same_products = Product.objects.all()[:4]\n    if pk is not None:\n        if pk == 0:\n            products = Product.objects.all().order_by('price')\n            category = {'name': 'все'}\n        else:\n            category = get_object_or_404(ProductCategory, pk=pk)",
+        "peekOfCode": "def products(request, pk=None):\n    title = 'каталог'\n    links_menu = ProductCategory.objects.all()\n    same_products = Product.objects.all()[:4]\n    basket = []\n    if request.user.is_authenticated:\n        basket = Basket.objects.filter(user=request.user)\n    if pk is not None:\n        if pk == 0:\n            products = Product.objects.all().order_by('price')",
         "detail": "mainapp.views",
         "documentation": {}
     },
