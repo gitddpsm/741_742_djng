@@ -686,7 +686,7 @@
         "kind": 2,
         "importPath": "authapp.views",
         "description": "authapp.views",
-        "peekOfCode": "def edit(request):\n    title = 'профиль'\n    if request.method == 'POST':\n        edit_form = ShopUserEditForm(request.POST, request.FILES, instance=request.user)\n        if edit_form.is_valid():\n            edit_form.save()\n            return HttpResponseRedirect(reverse('auth:edit'))\n    else:\n        edit_form = ShopUserEditForm(instance=request.user)\n    context = {",
+        "peekOfCode": "def edit(request):\n    title = 'профиль'\n    if request.method == 'POST':\n        edit_form = ShopUserEditForm(\n            request.POST, request.FILES, instance=request.user)\n        if edit_form.is_valid():\n            edit_form.save()\n            return HttpResponseRedirect(reverse('auth:edit'))\n    else:\n        edit_form = ShopUserEditForm(instance=request.user)",
         "detail": "authapp.views",
         "documentation": {}
     },
