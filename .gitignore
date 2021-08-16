@@ -139,4 +139,4 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 .vscode/
-.vscode/PythonImportHelper-v2-Completion.json
+.gitignore
