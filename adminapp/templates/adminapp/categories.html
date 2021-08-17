@@ -36,21 +36,21 @@
                                 <td>{{ category.description|title }}</td>
                                 <td class="text-center">
                                     <button>
-                                        <a href={% url 'adminapp:products' category.pk %}>
+                                        <a href={% url 'admin_staff:products' category.pk %}>
                                             товары категории
                                         </a>
                                     </button>
                                 </td>
                                 <td class="text-center">
                                     <button>
-                                        <a href={% url 'adminapp:category_update' category.pk %}>
+                                        <a href={% url 'admin_staff:category_update' category.pk %}>
                                             редактировать
                                         </a>
                                     </button>
                                 </td>
                                 <td class="text-center">
                                     <button>
-                                        <a href={% url 'adminapp:category_delete' category.pk %}>
+                                        <a href={% url 'admin_staff:category_delete' category.pk %}>
                                             удалить
                                         </a>
                                     </button>

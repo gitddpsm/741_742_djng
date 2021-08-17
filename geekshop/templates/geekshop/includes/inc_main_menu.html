@@ -21,10 +21,10 @@
         </li>
         {% if user.is_superuser %}
         <li>
-            <a href="{% url 'adminapp:users' %}">админка</a>
+            <a href="{% url 'admin_staff:users' %}">админка</a>
         </li>
         {% endif %}
-        
+
         {% endif %}
         <li>
             {% if user.is_authenticated %}

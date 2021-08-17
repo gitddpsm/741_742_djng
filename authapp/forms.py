@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
-import hashlib
 import random
+
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm
-
+import hashlib
 
 from .models import ShopUser
 
@@ -48,6 +47,7 @@ class ShopUserRegisterForm(UserCreationForm):
 
 
 class ShopUserEditForm(UserChangeForm):
+
     class Meta:
         model = ShopUser
         fields = ('username', 'first_name', 'email', 'age', 'avatar', 'password')

@@ -47,21 +47,21 @@
                                 <td>{{ product.quantity }}</td>
                                 <td class="text-center">
                                     <button>
-                                        <a href={% url 'adminapp:product_read' product.pk %}>
+                                        <a href={% url 'admin_staff:product_read' product.pk %}>
                                             Подробнее
                                         </a>
                                     </button>
                                 </td>
                                 <td class="text-center">
                                     <button class="{% if not product.is_active %} invisible {% endif %}">
-                                        <a href={% url 'adminapp:product_update' product.pk %}>
+                                        <a href={% url 'admin_staff:product_update' product.pk %}>
                                             Радактировать
                                         </a>
                                     </button>
                                 </td>
                                 <td class="text-center">
                                     <button>
-                                        <a href={% url 'adminapp:product_delete' product.pk %}>
+                                        <a href={% url 'admin_staff:product_delete' product.pk %}>
                                             удалить/восстановить
                                         </a>
                                     </button>

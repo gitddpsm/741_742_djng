@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from django.conf import settings
 from django.contrib import auth
 from django.core.mail import send_mail
@@ -79,3 +78,30 @@ def edit(request):
         'edit_form': edit_form
     }
     return render(request, 'authapp/edit.html', context)
+
+
+def send_verify_mail(user):
+    verify_link = reverse('auth:verify', args=[user.email, user.activation_key])
+
+    title = f'Подтверждение учетной записи {user.username}'
+
+    message = f'Для подтверждения учетной записи {user.username}, на сайте {settings.DOMAIN_NAME} - пройдите по ссылке: ' \
+              f'<a href="{settings.DOMAIN_NAME}{verify_link}"> Активировать </a>'
+
+    return send_mail(title, message, settings.EMAIL_HOST_USER, [user.email], fail_silently=False)
+
+
+def verify(request, email, activation_key):
+    try:
+        user = ShopUser.objects.get(email=email)
+        if user.activation_key == activation_key and not user.is_activation_key_expired():
+            user.is_active = True
+            user.save()
+            auth.login(request, user)
+            return render(request, 'authapp/verification.html')
+        else:
+            print(f'activation key error in user: {user.username}')
+            return render(request, 'authapp/verification.html')
+    except Exception as err:
+        print(f'Error activation user: {err.args}')
+        return HttpResponseRedirect(reverse('index'))
