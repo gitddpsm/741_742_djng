@@ -220,3 +220,4 @@ def product_delete(request, pk):
         product.is_active = False if product.is_active else True
         product.save()
         return HttpResponseRedirect(reverse('adminapp:products', args=[product.category.pk]))
+
