@@ -13,9 +13,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 import _locale
-# import environ
-# env = environ.Env()
-# environ.Env.read_env()
+import environ
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -53,9 +53,9 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = 'authapp.ShopUser'
 
-AUTHENTICATION_BACKENDS = (
-     'django.contrib.auth.backends.ModelBackend',
-     'social_core.backends.vk.VKOAuth2',
+# AUTHENTICATION_BACKENDS = (
+#      'django.contrib.auth.backends.ModelBackend',
+#     #  'social_core.backends.vk.VKOAuth2',
 # )
 
 # LOGIN_ERROR_URL = '/'
@@ -68,11 +68,11 @@ AUTHENTICATION_BACKENDS = (
 #     'social_core.pipeline.social_auth.auth_allowed',
 #     'social_core.pipeline.social_auth.social_user',
 #     'social_core.pipeline.user.create_user',
-    'authapp.pipeline.save_user_profile',
+    # 'authapp.pipeline.save_user_profile',
 #     'social_core.pipeline.social_auth.associate_user',
 #     'social_core.pipeline.social_auth.load_extra_data',
 #     'social_core.pipeline.user.user_details',
-)
+# )
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -179,7 +179,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL = '/auth/login/'
+# LOGIN_URL = '/auth/login/'
 
 # DOMAIN_NAME = 'http://localhost:8000'
 
