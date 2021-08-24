@@ -53,14 +53,14 @@
     {% if category %}
         <div class="title clearfix">
             <h2>
-                Категория: "{{ category.name|title}}"
+                Категория: "{{ category.name|title }}"
             </h2>
         </div>
     {% endif %}
         <div class="related-products" style="display: flex; justify-content: center; margin-top: 20px;">
         {% for product in products %}
             <div class="block">
-                <a href="#{#% url 'basket:add' product.pk %#}"><img src="/media/{{ product.image }}" alt="">
+                <a href="{% url 'basket:add' product.pk %}"><img src="/media/{{ product.image }}" alt="">
                 <div class="text">
                     <img scr="/static/geekshop/img/icon-hover.png" alt="img">
                     <h4>{{ product.name }}</h4>
