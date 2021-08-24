@@ -27,6 +27,7 @@ def get_hot_product():
 def products(request, pk=None):
     title = 'продукты'
     links_menu = ProductCategory.objects.all()
+    same_products = Product.objects.all()[:4]
     # basket = get_basket(request.user)
 
     hot_product = get_hot_product()
@@ -51,6 +52,7 @@ def products(request, pk=None):
         }
         return render(request, 'mainapp/products.html', context)
 
+    same_products = Product.objects.all()[:4]
     products = Product.objects.all().order_by('price')
 
     context = {
