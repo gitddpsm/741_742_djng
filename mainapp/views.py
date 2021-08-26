@@ -34,8 +34,9 @@ def products(request, pk=None):
     hot_product = get_hot_product()
     same_products = get_same_products(hot_product)
 
-    if request.user.is_authenticated:
-        basket = Basket.objects.filter(user=request.user)
+    # basket = []
+    # if request.user.is_authenticated:
+    #     basket = Basket.objects.filter(user=request.user)
 
     if pk is not None:
         if pk == 0:

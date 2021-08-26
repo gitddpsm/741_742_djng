@@ -9,14 +9,15 @@
             <a href="{% url 'auth:edit' %}">
                 {{ user.first_name|default:'Пользователь' }}
          </a>
-            {% comment %} <a href="{% url 'basket:view' %}" >
+            <a href="{% url 'basket:view' %}" >
                 <span>
                     {% if basket %}
                         {{ basket.0.total_cost|floatformat:0 }} руб
                         ({{ basket.0.total_quantity }} шт )
+                        {% comment %} ({{ basket|length }} шт ) {% endcomment %}
                     {% endif %}
                 </span>
-            </a> {% endcomment %}
+            </a>
         </li>
         {% comment %} {% if user.is_superuser %}
         <li>
