@@ -10,21 +10,21 @@
     <div class="details-products">
         <div class="details-slider">
             <div class="slider-product">
-                <img src="/static/geekshop/img/slider1.jpg">
+                <img src="/media/{{ hot_product.image }}">
             </div>
             <div class="slider-control">
                 <div class="block">
-                    <a href="#"><img src="/static/geekshop/img/controll.jpg" alt="">
+                    <a href="#"><img src="/media/{{ hot_product.image }}" style="width: 100%" alt="">
                         <div class="text"></div>
                     </a>
                 </div>
                 <div class="block">
-                    <a href="#"><img src="/static/geekshop/img/controll1.jpg" alt="">
+                    <a href="#"><img src="/media/{{ hot_product.image }}" style="width: 100%" alt="">
                         <div class="text"></div>
                     </a>
                 </div>
                 <div class="block">
-                    <a href="#"><img src="/static/geekshop/img/controll2.jpg" alt="">
+                    <a href="#"><img src="/media/{{ hot_product.image }}" style="width: 100%" alt="">
                         <div class="text"></div>
                     </a>
                 </div>
@@ -63,8 +63,8 @@
                     <p>{{ product.short_desc }} </p>
                     <p>{{ product.category.name }} </p>
                 </div>
-                </a>
-            </div>
+            </a>
+        </div>
         {% endfor %}
     </div>
 
