@@ -1,3 +1,4 @@
+# dd
 import random
 
 from django.shortcuts import render, get_object_or_404
@@ -27,11 +28,14 @@ def get_hot_product():
 def products(request, pk=None):
     title = 'продукты'
     links_menu = ProductCategory.objects.all()
-    same_products = Product.objects.all()[:4]
+    same_products = Product.objects.all()[:3]
     basket = get_basket(request.user)
 
     hot_product = get_hot_product()
     same_products = get_same_products(hot_product)
+
+    if request.user.is_authenticated:
+        basket = Basket.objects.filter(user=request.user)
 
     if pk is not None:
         if pk == 0:
@@ -52,7 +56,7 @@ def products(request, pk=None):
         }
         return render(request, 'mainapp/products.html', context)
 
-    same_products = Product.objects.all()[:4]
+    same_products = Product.objects.all()[:3]
     products = Product.objects.all().order_by('price')
 
     context = {
