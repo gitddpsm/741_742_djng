@@ -8,7 +8,7 @@
         <li>
             <a href="{% url 'auth:edit' %}">
                 {{ user.first_name|default:'Пользователь' }}
-         </a>
+            </a>
             <a href="{% url 'basket:view' %}" >
                 <span>
                     {% if basket %}
@@ -18,11 +18,11 @@
                 </span>
             </a>
         </li>
-        {% comment %} {% if user.is_superuser %}
+        {% if user.is_superuser %}
         <li>
             <a href="{% url 'admin_staff:users' %}">админка</a>
         </li>
-        {% endif %} {% endcomment %}
+        {% endif %}
 
         {% endif %}
         <li>

@@ -15,7 +15,7 @@ class Basket(models.Model):
     )
     quantity = models.PositiveIntegerField(
         verbose_name ='количество', 
-        default=0,
+        default = 0,
         )
 
     add_datetime = models.DateTimeField(

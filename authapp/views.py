@@ -27,7 +27,7 @@ def login(request):
     context = {
         'title': title,
         'login_form': login_form,
-        # 'next': next,
+        'next': next,
     }
     return render(request, 'authapp/login.html', context)
 
