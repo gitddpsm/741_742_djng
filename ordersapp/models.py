@@ -16,7 +16,7 @@ class Order(models.Model):
         (SENT_TO_PROCEED, 'отправлен в обработку'),
         (PROCEEDED, 'обрабатывается'),
         (PAID, 'оплачен'),
-        (READY, 'готов к выдачи'),
+        (READY, 'готов к выдачe'),
         (CANCEL, 'отменён'),
     )
     user = models.ForeignKey(
@@ -44,8 +44,8 @@ class Order(models.Model):
 
     class Meta:
         ordering = ('-created',)
-        verbose_name = "заказ",
-        verbose_name_plural = "заказы",
+        verbose_name = "заказ"
+        verbose_name_plural = "заказы"
 
     def __str__(self):
         return f'Текущий заказ: {self.id}'
@@ -85,3 +85,8 @@ class OrderItem(models.Model):
 
     def get_product_cost(self):
         return self.product.price * self.quantity
+    def delete(self):
+        self.product.quantity += self.quantity
+        self.product.save()
+
+        super(self.__class__, self).delete()
