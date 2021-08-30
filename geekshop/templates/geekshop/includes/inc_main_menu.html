@@ -6,46 +6,44 @@
         <li><a href="{% url 'contacts' %}">контакты</a></li>
         {% if user.is_authenticated %}
         <!-- Example split danger button -->
-        <li>
-            <a href="{% url 'auth:edit' %}">
-                {{ user.first_name|default:'Пользователь' }}
-            </a>
-            <a href="{% url 'basket:view' %}" >
-                <span>
-                    {% if basket %}
-                        {{ basket.0.total_cost|floatformat:0 }} руб
-                        ({{ basket.0.total_quantity }} шт )
-                    {% endif %}
-                </span>
-            </a>
-        </li>
-        <li>
-                <a class="menu dropdown-toggle" style='margin-top: -7px;' type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown button
+            <li>
+                <a href="{% url 'basket:view' %}" >
+                    <span>
+                        {% if basket %} корзина
+                            {{ basket.0.total_cost|floatformat:0 }} руб
+                            ({{ basket.0.total_quantity }} шт )
+                        {% endif %}
+                    </span>
                 </a>
-                <ul class="menu dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
+            </li>
+            <li>
+                <a  class="dropdown-toggle mrgnt6" 
+                    type="button" id="dropdownMenuButton1" 
+                    data-bs-toggle="dropdown" 
+                    aria-expanded="false">
+                        {{ user.first_name|default:'Пользователь' }}</a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="{% url 'auth:edit' %}"></a></li>
+                    <li><a class="dropdown-item" href="{% url 'auth:edit' %}">Профиль</a></li>
                     <li><a class="dropdown-item" href="#">Another action</a></li>
                     <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    {% if user.is_superuser %}
+                    <li><a class="dropdown-item" href="{% url 'admin_staff:users' %}">админка</a></li>
+                    {% endif %}
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a class="dropdown-item" href="{% url 'auth:logout' %}">выйти</a>
+                        {% else %}
+                        <a class="dropdown-item" href="{% url 'auth:login' %}">войти</a>
+                        {% endif %}
+                    </li>
                 </ul>
-            
-        </li> 
-        {% if user.is_superuser %}
-        <li>
-            <a href="{% url 'admin_staff:users' %}">админка</a>
-        </li>
-        {% endif %}
+            </li> 
 
         {% endif %}
-        <li>
-        </li>
-        <li>
-            {% if user.is_authenticated %}
-              <a href="{% url 'auth:logout' %}">выйти</a>
-            {% else %}
-              <a href="{% url 'auth:login' %}">войти</a>
-            {% endif %}
-        </li>
     </ul>
-    <a href="#" class="search"></a>
+    <ul>
+        <a href="#" class="search"></a>
+        {% comment %} <a href="#" class="box-icon"></a> {% endcomment %}
+    </ul>   
 </div>
