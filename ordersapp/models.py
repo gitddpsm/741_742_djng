@@ -42,10 +42,10 @@ class Order(models.Model):
         default=True,
     )
 
-    class Meta:
-        ordering = ('-created',)
-        verbose_name = "заказ"
-        verbose_name_plural = "заказы"
+class Meta:
+    ordering = ('-created',)
+    verbose_name = "заказ"
+    verbose_name_plural = "заказы"
 
     def __str__(self):
         return f'Текущий заказ: {self.id}'
@@ -85,6 +85,7 @@ class OrderItem(models.Model):
 
     def get_product_cost(self):
         return self.product.price * self.quantity
+
     def delete(self):
         self.product.quantity += self.quantity
         self.product.save()

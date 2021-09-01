@@ -9,6 +9,9 @@ class BasketQuerySet(models.QuerySet):
         for object in self:
             object.product.quantity += object.quantity
             object.product.save()
+        print('DEBUG> INFO:')
+        print(*args, **kwargs)
+        print('INFO ^----^')
         super(BasketQuerySet, self).delete(*args, **kwargs)
 
 
@@ -19,7 +22,7 @@ class Basket(models.Model):
         settings.AUTH_USER_MODEL, 
         on_delete = models.CASCADE, 
         related_name = 'basket',
-        )
+    )
     product = models.ForeignKey(
         Product,
         on_delete = models.CASCADE, 
@@ -27,8 +30,7 @@ class Basket(models.Model):
     quantity = models.PositiveIntegerField(
         verbose_name ='количество', 
         default = 0,
-        )
-
+    )
     add_datetime = models.DateTimeField(
         verbose_name = 'время',
         auto_now_add = True,
@@ -53,6 +55,7 @@ class Basket(models.Model):
         items = Basket.objects.filter(user = self.user)
         totalcost = sum(list(map(lambda x: x.product_cost, items)))
         return totalcost
+        
     def save(self, *args, **kwargs):
         if self.pk:
             self.product.quantity -= self.quantity - self.__class__.get_item(self.pk).quantity

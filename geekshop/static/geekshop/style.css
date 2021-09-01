@@ -908,16 +908,16 @@ td:first-child {
 	padding-left: 98px;
 	padding-right: 98px;
 	margin-top: 98px;
-	height: 651px; 
+	height: 420px; 
 }
 .details-slider {
-	width: 570px;
+	width: 430px;
 	float: left;
 	margin-right: 30px;
 }
 .slider-product {
-	width: 570px;
-	height: 570px;
+	width: 430px;
+	height: 370px;
 }
 .slider-control {
 	width: 420px;
