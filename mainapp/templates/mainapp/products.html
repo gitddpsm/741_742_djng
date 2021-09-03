@@ -12,8 +12,8 @@
 <div class="details">
     {% include 'mainapp/includes/inc_category_menu.html' %}
 
-            <div class="details-slider d-flex">
-                <div class="details-products">
+            <div class="details-products d-flex">
+                <div class="details-slider">
 				
 					<div class="slider-product text-center">
 						<img src="/media/{{hot_product.image}}">
@@ -94,13 +94,13 @@
 			<div class="related">
 				<div class="title clearfix">
 					<h2>Похожие продукты</h2>
-					<a class="explore" href="#">показать все <img src="/static/geekshop/img/arrow.png" alt=""></a>
+					<a class="explore" href="#">показать все <img src="{% static 'geekshop/img/arrow.png' %}" alt=""></a>
 				</div>
 				<div class="related-products clearfix">
 					<div class="block">
 						<a href="#"><img src="/media/{{product.image}}" alt="">
 							<div class="text">
-								<img src="img/icon-hover.png" alt="img">
+								<img src="{% static 'geekshop/img/icon-hover.png' %} " alt="img">
 								<h4>Стул повышенного качества</h4>
 								<p>Не оторваться. </p>
 							</div>

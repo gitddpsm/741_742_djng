@@ -8,7 +8,7 @@
     {% include 'mainapp/includes/inc_category_menu.html' %}
 
 
-<div class="details-products">
+<div class="details-products d-flex">
         <div class="details-slider">
             <div class="slider-product">
                 <img src="/media/{{ product.image }}">
@@ -48,14 +48,14 @@
     <div class="related">
         <div class="title clearfix">
             <h2>Похожие продукты</h2>
-            <a class="explore" href="#">показать все <img src="/static/geekshop/img/arrow.png" alt=""></a>
+            <a class="explore" href="#">показать все <img src="{% static 'geekshop/img/arrow.png' %}" alt=""></a>
         </div>
         <div class="related-products clearfix">
             {% for product_rel in related_products %}
             <div class="block">
                 <a href="#"><img src="/media/{{ product_rel.image }}" alt="">
                     <div class="text">
-                        <img src="/static/geekshop/img/icon-hover.png" alt="img">
+                        <img src="{% static 'geekshop/img/icon-hover.png' %}" alt="img">
                         <h4>{{ product_rel.name }}</h4>
                         <p>{{ product_rel.short_desc }} </p>
                         <p>{{ product_rel.category.name }} </p>

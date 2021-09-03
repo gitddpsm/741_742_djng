@@ -182,12 +182,15 @@ def product_create(request, pk):
 #     }
 #     return render(request, 'adminapp/product_read.html', context)
 
+
+
 class ProductDetailView(DetailView):
     model = Product
     template_name = 'adminapp/product_read.html'
-
+        
     def get(self, request, *args, **kwargs):
-        print(request)
+        # print(request)
+        return super().get(request, *args, **kwargs)     
 
 
 def product_update(request, pk):
@@ -208,6 +211,7 @@ def product_update(request, pk):
         'update_form': edit_form,
         'category': edit_product.category,
     }
+    # print(request, 'adminapp/product_update.html', context)
     return render(request, 'adminapp/product_update.html', context)
 
 

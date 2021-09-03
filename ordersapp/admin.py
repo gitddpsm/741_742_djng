@@ -7,9 +7,9 @@ class PersonAdmin(admin.ModelAdmin):
         "user", 
         "created", 
         "updated", 
-        "status",
+        "status"
     )
     list_filter = (
         "user", 
-        "created", 
+        "created" 
     )
