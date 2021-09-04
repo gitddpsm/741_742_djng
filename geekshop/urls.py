@@ -21,7 +21,6 @@ from django.urls import path, include
 from geekshop.views import index, contacts
 
 urlpatterns = [
-    path('', index, name='index'),
     path('admin/', admin.site.urls),
     # path('admin/', include('authapp.urls', namespace='auth'), name='auth'),
     path('products/', include('mainapp.urls', namespace='products'), name='products'),
@@ -29,6 +28,7 @@ urlpatterns = [
     path('auth/', include('authapp.urls', namespace='auth'), name='auth'),
     path('order/', include('ordersapp.urls', namespace='order'), name='order'),
     path('basket/', include('basketapp.urls', namespace='basket'), name='basket'),
+    path('', index, name='index'),
     path('contacts/', contacts, name='contacts'),
     path('', include('social_django.urls', namespace='social')),
 ]

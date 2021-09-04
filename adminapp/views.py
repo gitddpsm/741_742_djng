@@ -67,7 +67,7 @@ class UserCreateView(LoginRequiredMixin, CreateView):
         context = super(UserCreateView, self).get_context_data()
         title = 'пользователи/создание'
         context.update({'title': title})
-
+        print(context, 'UserCreateView')
         return context
 
 

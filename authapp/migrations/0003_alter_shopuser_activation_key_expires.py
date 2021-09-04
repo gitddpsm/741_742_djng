@@ -7,13 +7,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('authapp', '0001_initial'),
+        ('authapp', '0002_alter_shopuser_activation_key_expires'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='shopuser',
             name='activation_key_expires',
-            field=models.DateTimeField(default=datetime.datetime(2021, 9, 4, 7, 44, 32, 917426)),
+            field=models.DateTimeField(default=datetime.datetime(2021, 9, 4, 7, 44, 44, 318384)),
         ),
     ]
