@@ -1,4 +1,4 @@
-"""geekshop URL Configuration
+"""geekshop DD Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -13,14 +13,25 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-from geekshop.views import index, contact
+from geekshop.views import index, contacts
 
 urlpatterns = [
+    path('', index, name='index'),
     path('admin/', admin.site.urls),
-    path('products/', include('mainapp.urls')),
-    path('', index),
-    path('contact/', contact)
+    # path('admin/', include('authapp.urls', namespace='auth'), name='auth'),
+    path('products/', include('mainapp.urls', namespace='products'), name='products'),
+    path('admin_staff/', include('adminapp.urls', namespace='admin_staff'), name='admin_staff'),
+    path('auth/', include('authapp.urls', namespace='auth'), name='auth'),
+    path('order/', include('ordersapp.urls', namespace='order'), name='order'),
+    path('basket/', include('basketapp.urls', namespace='basket'), name='basket'),
+    path('contacts/', contacts, name='contacts'),
+    path('', include('social_django.urls', namespace='social')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
