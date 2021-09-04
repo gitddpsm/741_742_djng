@@ -55,7 +55,7 @@ class Basket(models.Model):
         items = Basket.objects.filter(user = self.user)
         totalcost = sum(list(map(lambda x: x.product_cost, items)))
         return totalcost
-        
+  
     def save(self, *args, **kwargs):
         if self.pk:
             self.product.quantity -= self.quantity - self.__class__.get_item(self.pk).quantity

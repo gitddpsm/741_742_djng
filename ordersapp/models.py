@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.db import models
-
 from mainapp.models import Product
+
 
 class OrderItemQuerySet(models.QuerySet):
     def delete(self, *args, **kwargs):
@@ -48,10 +48,10 @@ class Order(models.Model):
         default=True,
     )
 
-class Meta:
-    ordering = ('-created',)
-    verbose_name = "заказ"
-    verbose_name_plural = "заказы"
+    class Meta:
+        ordering = ('-created',)
+        verbose_name = "заказ"
+        verbose_name_plural = "заказы"
 
     def __str__(self):
         return f'Текущий заказ: {self.id}'
