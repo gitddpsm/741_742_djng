@@ -134,7 +134,9 @@ def category_update(request, pk):
 
 
 def category_delete(request, pk):
-    pass
+    category = get_object_or_404(ProductCategory, pk=pk)
+    category.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
 def products(request, pk):

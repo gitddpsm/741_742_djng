@@ -1,6 +1,3 @@
-<a href="#" class="nav_link active">
-    <i class='bx bx-grid-alt nav_icon'></i>
-    <span class="nav_name">Dashboard</span> </a>
 <a href="{% url 'admin_staff:users' %}"
     class="{% if request.resolver_match.url_name == 'users' %}
     active
@@ -16,6 +13,14 @@
     <i class='bx bx-message-square-detail nav_icon'></i>
     <span class="nav_name">Категории</span>
 </a>
+
+{% comment %} <a href="{% url 'admin_staff:products' %}" 
+    class="{% if request.resolver_match.url_name == 'users' %}
+    active
+    {% endif %} nav_link">
+    <i class='bx bx-grid-alt nav_icon'></i>
+    <span class="nav_name">Товары</span>
+</a> {% endcomment %}
 
 <a href="{% url 'ordersapp:orders_list' %}" class="nav_link">
     <i class='bx bx-bookmark nav_icon'></i>
