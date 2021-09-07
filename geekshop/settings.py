@@ -30,7 +30,8 @@ SECRET_KEY = 'django-insecure-5f@ycg3(wb!p3r=lm5%-+gjg#h6^ug@(0@h-qg+n!c5(c3r9y(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -59,10 +60,15 @@ if DEBUG:
     def show_toolbar(request):
         return True
 
+    # this is the main reason for not showing up the toolbar
+    import mimetypes
+    mimetypes.add_type("application/javascript", ".js", True)
+
     DEBUG_TOOLBAR_CONFIG = {
+        'INTERCEPT_REDIRECTS': False,
         'SHOW_TOOLBAR_CALLBACK' : show_toolbar,
     }
-
+    
     DEBUG_TOOLBAR_PANELS = [
         'debug_toolbar.panels.versions.VersionsPanel',
         'debug_toolbar.panels.timer.TimerPanel',
@@ -79,7 +85,11 @@ if DEBUG:
         'debug_toolbar.panels.profiling.ProfilingPanel',
         'template_profiler_panel.panels.template.TemplateProfilerPanel',
     ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+INTERNAL_IPS = ['127.0.0.1']
+    
+    
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 AUTH_USER_MODEL = 'authapp.ShopUser'
 
