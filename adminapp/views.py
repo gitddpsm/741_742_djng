@@ -9,6 +9,7 @@ from mainapp.models import ProductCategory, Product
 from django.contrib.auth.decorators import user_passes_test
 from django.views.generic import ListView, CreateView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.edit import DeleteView # CreateView, UpdateView
 
 
 # def users(request):
@@ -133,11 +134,23 @@ def category_update(request, pk):
     pass
 
 
-def category_delete(request, pk):
-    category = get_object_or_404(ProductCategory, pk=pk)
-    category.delete()
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+# def category_delete(request, pk):
+#     # category = get_object_or_404(ProductCategory, pk=pk)
+#     # category.delete()
+#     # return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+#     pass
 
+class ProductCategoryDelete(DeleteView):
+    model = ProductCategory
+    template_name = 'adminapp/productcategory_confirm_delete.html' # adminapp\templates\adminapp\productcategory_confirm_delete.html
+    success_url = reverse_lazy('admin_staff:users')
+
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        print(self.object.pk)
+        self.object.delete() 
+        
+        return HttpResponseRedirect(self.get_success_url())
 
 def products(request, pk):
     title = 'админка/продукт'
