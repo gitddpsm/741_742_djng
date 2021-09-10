@@ -19,8 +19,8 @@ class ProductCategory(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        # return self.name
-        return f'{self.name} - {self.is_active}'
+        return self.name
+        # return f'{self.name} - {self.is_active}'
 
 
     class Meta:
@@ -78,6 +78,6 @@ class Product(models.Model):
         verbose_name = 'товар'
         verbose_name_plural = 'товары'
     
-    @staticmethod
-    def get_items():
-        return Product.objects.filter(is_active= True ).order_by('category', 'name')
+    # @staticmethod
+    # def get_items():
+    #     return Product.objects.filter(is_active= True ).order_by('category', 'name')

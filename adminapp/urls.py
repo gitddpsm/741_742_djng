@@ -5,7 +5,7 @@ from adminapp.views import (
     user_update,
     product_update,
     user_delete,
-    category_create,
+    # category_create,
     categories,
     # category_delete,
     category_update,
