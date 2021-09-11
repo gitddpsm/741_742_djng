@@ -76,8 +76,6 @@ class Order(models.Model):
 
         self.is_active = False
         self.save()
-# total_quantity
-    blahblah = '100'
     
     def get_summary(self):
         items = self.orderitems.select_related()
@@ -88,7 +86,8 @@ class Order(models.Model):
         }
 
 class OrderItem(models.Model):
-    object = OrderItemQuerySet.as_manager()
+    objects = OrderItemQuerySet.as_manager()
+
     order = models.ForeignKey(
         Order, 
         related_name = 'orderitems',
@@ -111,4 +110,6 @@ class OrderItem(models.Model):
         self.product.quantity += self.quantity
         self.product.save()
 
+        print(f' self.__class__: {self.__class__},\n product_quantity: {self.product_quantity}')
         super(self.__class__, self).delete()
+ 
