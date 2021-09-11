@@ -112,4 +112,5 @@ class OrderItem(models.Model):
 
         print(f' self.__class__: {self.__class__},\n product_quantity: {self.product_quantity}')
         super(self.__class__, self).delete()
- 
+
+    

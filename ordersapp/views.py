@@ -40,7 +40,7 @@ class OrderCreate(LoginRequiredMixin, CreateView):
             formset = OrderFormSet(self.request.POST)
         else:
             basket_items = Basket.objects.filter(user=self.request.user)
-            if basket_items.exist():
+            if basket_items.exists():
                 OrderFormSet = inlineformset_factory(Order, OrderItem, form=OrderItemForm, extra = basket_items.count())
                 formset = OrderFormSet()
                 for num, form in enumerate(formset.forms):
@@ -142,7 +142,8 @@ def order_forming_complete(request, pk):
 def product_quantity_update_save(sender, update_fields, instance, **kwargs):
     if update_fields == 'quantity' or 'product':
         if instance.pk:
-            instance.product.quantity -= instance.quantity - sender.get_item(instance.pk).quantity
+            print('fuck')            
+            # instance.product.quantity -= instance.quantity - sender.get_item(instance.pk).quantity
         else:
             instance.product.quantity -= instance.quantity
         instance.product.save()
