@@ -9,9 +9,6 @@ class BasketQuerySet(models.QuerySet):
         for object in self:
             object.product.quantity += object.quantity
             object.product.save()
-        print('DEBUG> INFO:')
-        print(*args, **kwargs)
-        print('INFO ^----^')
         super(BasketQuerySet, self).delete(*args, **kwargs)
 
 
@@ -38,8 +35,8 @@ class Basket(models.Model):
 
     @staticmethod
     def get_item(pk):
-        return Basket.objects.filter(pk=pk).first()
-        # return OrderItem.objects.filter(pk=pk).first()
+        # return Basket.objects.filter(pk=pk).first()
+        return OrderItem.objects.filter(pk=pk).first()
 
     @property
     def product_cost(self):

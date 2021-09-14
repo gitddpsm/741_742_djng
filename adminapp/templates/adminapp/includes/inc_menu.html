@@ -12,17 +12,21 @@
     <i class='bx bx-message-square-detail nav_icon'></i>
     <span class="nav_name">Категории</span>
 </a>
-<a href="{% url 'ordersapp:orders_list' %}" class="nav_link">
+ <a href="{% url 'ordersapp:orders_list' %}" class="nav_link">
     <i class='bx bx-bookmark nav_icon'></i>
     <span class="nav_name">Заказы</span>
-</a>
-<a href="{% url 'admin_staff:product_read' pk=0 %}" 
+</a> 
+ {% comment %} <a href="{% url 'newordersapp:orders_list' %}" class="nav_link">
+    <i class='bx bx-bookmark nav_icon'></i>
+    <span class="nav_name">NewOrders</span>
+</a> {% endcomment %}
+{% comment %} <a href="{% url 'admin_staff:product_read' pk=0 %}" 
     class="{% if request.resolver_match.url_name == 'users' %}
     active
     {% endif %} nav_link">
     <i class='bx bx-grid-alt nav_icon'></i>
     <span class="nav_name">Товары</span>
-</a> 
+</a>  {% endcomment %}
  {% comment %} <a href="#" class="nav_link">
     <i class='bx bx-bookmark nav_icon'></i>
     <span class="nav_name">Bookmark</span>

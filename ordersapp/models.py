@@ -1,14 +1,9 @@
+
 from django.conf import settings
 from django.db import models
 from mainapp.models import Product
 
 
-class OrderItemQuerySet(models.QuerySet):
-    def delete(self, *args, **kwargs):
-        for object in self:
-            object.product.quantity += object.quantity
-            object.product.save()
-        super(OrderItemQuerySet, self).delete(*args, **kwargs)
 
 class Order(models.Model):
     FORMING = 'FM'
@@ -21,8 +16,8 @@ class Order(models.Model):
     ORDER_STATUS_CHOICES = (
         (FORMING, 'формируется'),
         (SENT_TO_PROCEED, 'отправлен в обработку'),
-        (PROCEEDED, 'обрабатывается'),
         (PAID, 'оплачен'),
+        (PROCEEDED, 'обрабатывается'),
         (READY, 'готов к выдачe'),
         (CANCEL, 'отменён'),
     )
@@ -51,7 +46,7 @@ class Order(models.Model):
 
     class Meta:
         ordering = ('-created',)
-        verbose_name = "заказ"
+        verbose_name = 'заказ'
         verbose_name_plural = "заказы"
 
     def __str__(self):
@@ -81,9 +76,21 @@ class Order(models.Model):
         items = self.orderitems.select_related()
 
         return {
-            'total_cost': sum(list(map(lambda x: x.quantity * x.product.price, items))),
-            'total_quantity': sum(list(map(lambda x: x.quantity, items))),
+            'get_total_cost': sum(list(map(lambda x: x.quantity * x.product.price, items))),
+            'get_total_quantity': sum(list(map(lambda x: x.quantity, items))),
         }
+
+
+class OrderItemQuerySet(models.QuerySet):
+    def delete(self, *args, **kwargs):
+        for object in self:
+            object.product.quantity += object.quantity
+            object.product.save()
+        super(OrderItemQuerySet, self).delete(*args, **kwargs)
+
+
+'''    
+'''    
 
 class OrderItem(models.Model):
     objects = OrderItemQuerySet.as_manager()
@@ -110,7 +117,5 @@ class OrderItem(models.Model):
         self.product.quantity += self.quantity
         self.product.save()
 
-        print(f' self.__class__: {self.__class__},\n product_quantity: {self.product_quantity}')
+        print(f' self.__class__: {self.__class__},\n product_quantity: {self.quantity}')
         super(self.__class__, self).delete()
-
-    

@@ -1,5 +1,5 @@
 # from django.shortcuts import render
-
+from django.db import models
 from django.db import transaction
 from django.db.models.signals import pre_save, pre_delete
 from django.dispatch import receiver
@@ -140,10 +140,10 @@ def order_forming_complete(request, pk):
 @receiver(pre_save, sender=OrderItem)
 @receiver(pre_save, sender=Basket)
 def product_quantity_update_save(sender, update_fields, instance, **kwargs):
-    if update_fields == 'quantity' or 'product':
+    if update_fields == 'quantity' 'product':
+        # if update_fields == 'quantity' or 'product':
         if instance.pk:
-            print('fuck')            
-            # instance.product.quantity -= instance.quantity - sender.get_item(instance.pk).quantity
+            instance.product.quantity -= instance.quantity.sender.get_item(instance.pk).quantity
         else:
             instance.product.quantity -= instance.quantity
         instance.product.save()
