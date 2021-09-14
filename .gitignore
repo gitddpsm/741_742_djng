@@ -140,5 +140,6 @@ dmypy.json
 cython_debug/
 
 .vscode/
-
+G:/DJango/GBproject/geekshop/static/
 dbgb.json
+static/

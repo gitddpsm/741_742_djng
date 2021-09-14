@@ -16,7 +16,7 @@ def index(request):
 def contacts(request):
     title = 'контакты'
     context = {
-        'title': title,
+        # 'title': title,
         # 'basket': get_basket(request.user),
     }
     return render(request, 'geekshop/contact.html', context)

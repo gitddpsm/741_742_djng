@@ -12,16 +12,24 @@ class ProductCategory(models.Model):
         verbose_name='описание',
         blank=True,
     )
+    
+    is_active = models.BooleanField(default=True)
 
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
+        # return f'{self.name} - {self.is_active}'
+
 
     class Meta:
         verbose_name = 'категория'
         verbose_name_plural = 'категории'
+
+    @staticmethod
+    def get_items():
+        return Product.objects.order_by('name')
 
 
 class Product(models.Model):
@@ -58,6 +66,9 @@ class Product(models.Model):
         default=0,
     )
 
+    # created = models.DateTimeField(auto_now_add=True)
+    # updated = models.DateTimeField(auto_now=True)
+
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
@@ -70,3 +81,4 @@ class Product(models.Model):
     @staticmethod
     def get_items():
         return Product.objects.filter(is_active= True ).order_by('category', 'name')
+        

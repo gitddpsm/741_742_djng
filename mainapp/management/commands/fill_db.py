@@ -36,3 +36,10 @@ class Command(BaseCommand):
 
         ShopUser.objects.create_superuser(
             'admin', 'django@geekshop.local', '1234', age=30)
+'''
+    for el in catalog:
+        ProductCategory.objects.get_or_create(name=el['category'])      # Создадим новую категорию, если такой не было
+        category = ProductCategory.objects.filter(name=el['category'])  # Найдем эту категорию для получения ID
+        product = Product(name=el['name'], category_id=category.values()[0]['id'], short_desc=el['short_desc'], image='products_images/'+el['image'], description=el['description'], price=el['price'], quantity=el['quantity'])
+        product.save()
+'''

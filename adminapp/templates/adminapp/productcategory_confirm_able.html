@@ -1,0 +1,26 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+
+
+{% block content %}
+  <div class="category_update">
+    Уверены, что хотите изменить активность категории {{ object.name }}
+    {% comment %} {% if user_to_delete.first_name %}
+      ({{ user_to_delete.first_name|title }}</b>
+      {% if user_to_delete.last_name %}
+        {{ user_to_delete.last_name|title }}
+      {% endif %})
+    {% endif %} {% endcomment %}
+    ?
+    <form action="{% url 'admin_staff:category_able' object.pk %}"
+          method="post">
+      {% csrf_token %}
+      <input class="btn btn-danger" type="submit" value="Изменить">
+    </form>
+    <button class="btn btn-success">
+      <a href="{% url 'admin_staff:categories' %}">
+        Отмена
+      </a>
+    </button>
+  </div>
+{% endblock %}

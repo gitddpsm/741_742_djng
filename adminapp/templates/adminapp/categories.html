@@ -50,6 +50,13 @@
                                 </td>
                                 <td class="text-center">
                                     <button>
+                                        <a href={% url 'admin_staff:category_able' category.pk %}>
+                                            en`able/dis`able
+                                        </a>
+                                    </button>
+                                </td>
+                                <td class="text-center">
+                                    <button>
                                         <a href={% url 'admin_staff:category_delete' category.pk %}>
                                             удалить
                                         </a>

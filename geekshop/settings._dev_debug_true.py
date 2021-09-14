@@ -49,14 +49,11 @@ INSTALLED_APPS = [
     'basketapp',
     'adminapp',
     'ordersapp',
-    # 'newordersapp',
 
     'social_django',
 
     'debug_toolbar',
     'template_profiler_panel',
-
-    'django_extensions',
 ]
 
 if DEBUG:
@@ -134,7 +131,7 @@ ROOT_URLCONF = 'geekshop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['geekshop\\templates'],
+        'DIRS': ['geekshop/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
