@@ -34,8 +34,9 @@ class UserListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         return ShopUser.objects.all().order_by('-is_active', '-is_superuser', '-is_staff', 'username')
 
-    def get_context_data(self):
-        context = super(UserListView, self).get_context_data()
+    def get_context_data(self, **kwargs):
+        # context = super(UserListView, self).get_context_data()
+        context = super().get_context_data(**kwargs)
         title = 'админка/пользователи'
         context.update({'title': title})
         return context
