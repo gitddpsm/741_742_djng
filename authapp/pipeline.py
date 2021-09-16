@@ -16,6 +16,7 @@ def save_user_profile(backend, user, response, *args, **kwargs):
     api_url = urlunparse(('https', 'api.vk.com', '/method/users.get', None,
                             urlencode(OrderedDict(fields=','.join(('bdate', 'sex', 'about')),
                             access_token=response['access_token'], v='5.131')),
+                            # access_token=response['access_token']),
                           None))
     resp = requests.get(api_url)
     if resp.status_code != 200:
