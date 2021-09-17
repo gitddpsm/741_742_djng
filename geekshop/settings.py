@@ -28,8 +28,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-5f@ycg3(wb!p3r=lm5%-+gjg#h6^ug@(0@h-qg+n!c5(c3r9y('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = False
+# DEBUG = True
+DEBUG = False
 # ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = ['*']
 
@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'basketapp',
     'adminapp',
     'ordersapp',
-    # 'newordersapp',
 
     'social_django',
 
@@ -134,7 +133,7 @@ ROOT_URLCONF = 'geekshop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['geekshop\\templates'],
+        'DIRS': ['geekshop/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
