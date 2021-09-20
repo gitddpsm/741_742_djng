@@ -12,4 +12,4 @@ class PersonalAdmin(admin.ModelAdmin):
 class PersonalAdmin(admin.ModelAdmin):
     list_display = ('name', 'is_active', 'price', 'quantity')
     # list_filter = ('created', 'user')
-# 
+# # 

@@ -76,7 +76,7 @@ class UserCreateView(LoginRequiredMixin, CreateView):
 
 class ProductCategoryCreate(LoginRequiredMixin, CreateView):
     model = ProductCategory
-    template_name = 'adminapp/product_category_update.html'
+    template_name = 'adminapp/product_category_create.html'
     form_class = CategoryEditForm
     success_url = reverse_lazy('admin_staff:categories')
 
@@ -84,8 +84,23 @@ class ProductCategoryCreate(LoginRequiredMixin, CreateView):
         context = super(ProductCategoryCreate, self).get_context_data()
         title = 'Категория/создание'
         context.update({'title': title})
-        print(context, 'ProductCategoryCreate')
+        
         return context
+
+class ProductCategoryUpdate(LoginRequiredMixin, UpdateView):
+    model = ProductCategory
+    template_name = 'adminapp/product_category_update.html'
+    form_class = CategoryEditForm
+    success_url = reverse_lazy('admin_staff:categories_read')
+
+    def get_context_data(self):
+        context = super(ProductCategoryUpdate, self).get_context_data()
+        title = 'Category/Edit'
+        context.update({'title': title})
+
+        return context
+
+
 
 def user_update(request, pk):
     title = 'пользователи/редактирование'
@@ -145,9 +160,27 @@ def categories(request):
 #     pass
 
 
-def category_update(request, pk):
-    pass
+def category_update(request, pk): # TODO:  
+    title = 'Category/Update category'
+    updating_category = get_object_or_404(ProductCategory, pk=pk)
+    print(updating_category)
+    
+    if request.method == 'POST':
+        edit_form = CategoryEditForm(request.POST, request.FILES, instance=updating_category)
+        print(f' form for save :{edit_form}')
+        if edit_form.is_valid():
+            edit_form.save()
+            return HttpResponseRedirect(reverse('adminapp:category_update', args=str([updating_category.pk])))
+    else:
+        edit_form = CategoryEditForm(instance=updating_category)
+        print('DEBUG!!! \n Else:')
+        print(f'DEBUG!!! \n form for Fuck :{edit_form}')
 
+    context = {'title': title, 'form': edit_form}
+    print('DEBUG')
+    print(context)
+    return render(request, 'adminapp/product_category_update.html', context)
+    
 
 # def category_delete(request, pk):
 #     # category = get_object_or_404(ProductCategory, pk=pk)
@@ -281,3 +314,5 @@ class ProductCategoryAble(DeleteView):
         self.object.save() 
         
         return HttpResponseRedirect(self.get_success_url())
+
+# adminapp.views.category_update

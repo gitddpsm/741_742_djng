@@ -8,14 +8,22 @@
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table mr-1"></i>
-                Редактирование/Создание
+                Редактирование/ (продукт_категори_нэйм) 
+                {% comment %} # как ету сюда? {% endcomment %}
             </div>
             <div class="card-body">
                 <form class="form-horizontal" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
+                    <a>это тут</a>   
                     {{ form.as_p }}
                     <input class="form-control" type="submit" value="сохранить">
                 </form>
+                <button class="btn btn-default form-control last">
+                    <a href="{% url 'adminapp:categories' %}">
+                    к списку категорий
+                    </a>
+                </button>
+
             </div>
 
         </div>
